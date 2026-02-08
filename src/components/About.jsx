@@ -72,17 +72,20 @@ const About = () => {
         between development, analytics, and automation to deliver comprehensive
         solutions.
       </motion.p>
-      <button
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        download="Ghabbara_Hanene_Resume.pdf"
         ref={resumeButtonRef}
-        style={magneticStyle}
+        style={{ ...magneticStyle, display: 'inline-block' }}
         className="mt-10 px-6 py-3 text-white bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-md shadow-md hover:bg-gradient-to-r hover:from-cyan-600 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-        onClick={() => window.open("/resume.pdf", "_blank")}
       >
         <span className="font-semibold flex gap-1.5 items-center">
           <RiBriefcase4Fill />
           Download Resume
         </span>
-      </button>
+      </a>
       <div className="mt-12 flex flex-wrap gap-10">
         {services.map((service, index) => (
           <ServiceCardMemo key={service.title} index={index} {...service} />
