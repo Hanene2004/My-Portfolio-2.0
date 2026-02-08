@@ -5,43 +5,41 @@ import * as random from "maath/random/dist/maath-random.esm";
 import CanvasErrorBoundary from "./CanvasErrorBoundary";
 
 const Stars = (props) => {
-  const ref = useRef();
-  const [sphere] = useState(() => random.inSphere(new Float32Array(600), { radius: 1.5 }));
+    const ref = useRef();
+    const [sphere] = useState(() => random.inSphere(new Float32Array(600), { radius: 1.5 }));
 
-  useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
-  });
+    useFrame((state, delta) => {
+        ref.current.rotation.x -= delta / 10;
+        ref.current.rotation.y -= delta / 15;
+    });
 
-  return (
-    <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
-        <PointMaterial
-          transparent
-          color='#fff'
-          size={0.002}
-          sizeAttenuation={true}
-          depthWrite={false}
-        />
-      </Points>
-    </group>
-  );
+    return (
+        <group rotation={[0, 0, Math.PI / 4]}>
+            <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
+                <PointMaterial
+                    transparent
+                    color='#fff'
+                    size={0.002}
+                    sizeAttenuation={true}
+                    depthWrite={false}
+                />
+            </Points>
+        </group>
+    );
 };
 
 const StarsCanvas = () => {
-  return (
-    <div className='w-full h-full absolute inset-0 z-[-1]'>
-      <CanvasErrorBoundary>
-        <Canvas camera={{ position: [0, 0, 1] }} dpr={[1, 2]}>
-          <Suspense fallback={null}>
-            <Stars />
-          </Suspense>
-
-          <Preload all />
-        </Canvas>
-      </CanvasErrorBoundary>
-    </div>
-  );
+    return (
+        <div className='w-full h-full absolute inset-0 z-[-1]'>
+            <CanvasErrorBoundary>
+                <Canvas camera={{ position: [0, 0, 1] }} dpr={[1, 2]}>
+                    <Suspense fallback={null}>
+                        <Stars />
+                    </Suspense>
+                </Canvas>
+            </CanvasErrorBoundary>
+        </div>
+    );
 };
 
 export default StarsCanvas;

@@ -107,6 +107,8 @@ const MagneticBubble = ({ skill, index }) => {
     );
 };
 
+const MagneticBubbleMemo = React.memo(MagneticBubble);
+
 const SoftSkills = () => {
     return (
         <div className="relative py-20 min-h-[800px] overflow-hidden">
@@ -122,10 +124,9 @@ const SoftSkills = () => {
                 </h2>
             </motion.div>
 
-            {/* Magnetic Field Container */}
             <div className="flex flex-wrap justify-center items-center gap-12 max-w-7xl mx-auto px-4 relative">
                 {softSkills.map((skill, index) => (
-                    <MagneticBubble key={skill.name} index={index} skill={skill} />
+                    <MagneticBubbleMemo key={skill.name} index={index} skill={skill} />
                 ))}
             </div>
 

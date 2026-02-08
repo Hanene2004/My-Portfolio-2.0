@@ -28,6 +28,7 @@ const ServiceCard = ({ index, title, icon }) => (
           src={icon}
           alt="web-development"
           className="w-16 h-16 object-contain"
+          loading="lazy"
         />
 
         <h3 className="text-white text-[20px] font-bold text-center">
@@ -37,6 +38,8 @@ const ServiceCard = ({ index, title, icon }) => (
     </motion.div>
   </Tilt>
 );
+
+const ServiceCardMemo = React.memo(ServiceCard);
 
 const About = () => {
   const { ref: resumeButtonRef, style: magneticStyle } = useMagnetic({
@@ -82,7 +85,7 @@ const About = () => {
       </button>
       <div className="mt-12 flex flex-wrap gap-10">
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <ServiceCardMemo key={service.title} index={index} {...service} />
         ))}
       </div>
 

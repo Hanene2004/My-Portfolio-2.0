@@ -36,7 +36,7 @@ const NyanCat = () => {
           <AnimatedDiv
             key={div.id}
             id={div.id}
-            onClick={() => {}}
+            onClick={() => { }}
             onCompleted={() => {
               setDivs((prev) => prev.filter((d) => d.id !== div.id));
             }}
@@ -70,6 +70,7 @@ const AnimatedDiv = ({ id, onClick, onCompleted }) => {
         src="/assets/nyan-cat.gif"
         className="fixed z-10 h-40 w-auto"
         alt="Nyan Cat"
+        loading="lazy"
       />
     </motion.div>
   );

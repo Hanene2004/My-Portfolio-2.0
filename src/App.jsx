@@ -1,12 +1,10 @@
 import React, { useEffect, useState, Suspense, useRef } from "react";
 import { BrowserRouter } from "react-router-dom";
 
-import {
-  Navbar,
-  StarsCanvas,
-  SocialDock,
-  DynamicRibbon,
-} from "./components";
+const Navbar = React.lazy(() => import("./components/Navbar"));
+const StarsCanvas = React.lazy(() => import("./components/canvas/Stars"));
+const SocialDock = React.lazy(() => import("./components/SocialDock"));
+const DynamicRibbon = React.lazy(() => import("./components/DynamicRibbon"));
 
 const About = React.lazy(() => import("./components/About"));
 const Achievement = React.lazy(() => import("./components/Achievement"));
@@ -28,6 +26,7 @@ import ReactBitsAudioProvider from "./reactbits/context/ReactBitsAudioProvider";
 import ReactBitsCursorProvider from "./reactbits/context/ReactBitsCursorProvider";
 import { ThemeProvider } from "./context/ThemeContext";
 import { HelmetProvider } from "react-helmet-async";
+import { HeroSkeleton, SectionSkeleton, WorksSkeleton } from "./components/ui/Skeletons";
 
 const Spotlight = () => {
   const mouseRef = useRef({ x: 0, y: 0 });
@@ -76,30 +75,50 @@ const App = () => {
                 <div className="relative z-0">
                   <Spotlight />
                   <ElasticCursor />
-                  <DynamicRibbon />
+                  <Suspense fallback={null}>
+                    <DynamicRibbon />
+                  </Suspense>
                   <EasterEggs />
                   <ThemeToggle />
                   <VisitorCounter />
                   <BackToTop />
                   <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-                    <Navbar />
-                    <Suspense fallback={<div className="h-screen" />}>
+                    <Suspense fallback={null}>
+                      <Navbar />
+                    </Suspense>
+                    <Suspense fallback={<HeroSkeleton />}>
                       <Hero />
                     </Suspense>
                   </div>
-                  <StarsCanvas />
                   <Suspense fallback={null}>
+                    <StarsCanvas />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
                     <About />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
                     <Experience />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
                     <Education />
+                  </Suspense>
+                  <Suspense fallback={<WorksSkeleton />}>
                     <Works />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
                     <Skills />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
                     <SoftSkills />
+                  </Suspense>
+                  <Suspense fallback={<SectionSkeleton />}>
                     <Achievement />
                   </Suspense>
-                  <SocialDock />
+                  <Suspense fallback={null}>
+                    <SocialDock />
+                  </Suspense>
                   <div className="relative z-0">
-                    <Suspense fallback={null}>
+                    <Suspense fallback={<SectionSkeleton />}>
                       <Contact />
                     </Suspense>
                   </div>

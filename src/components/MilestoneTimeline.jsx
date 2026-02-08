@@ -28,7 +28,7 @@ const MilestoneTimeline = () => {
                             }`}>
                             <div className="flex items-center gap-3 mb-2">
                                 <div className="p-2 rounded-lg bg-white/5">
-                                    <img src={milestone.icon} alt={milestone.title} className="w-5 h-5 object-contain opacity-80" />
+                                    <img src={milestone.icon} alt={milestone.title} className="w-5 h-5 object-contain opacity-80" loading="lazy" />
                                 </div>
                                 <span className="text-cyan-400 font-bold tracking-widest text-sm uppercase">
                                     {milestone.date}

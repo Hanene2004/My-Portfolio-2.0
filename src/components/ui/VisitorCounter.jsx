@@ -9,14 +9,6 @@ const VisitorCounter = () => {
 
     useEffect(() => {
         const incrementVisitorCount = async () => {
-            if (!supabase) {
-                console.warn('Supabase not configured. Visitor counter using local storage.');
-                const localCount = localStorage.getItem('portfolio-visitor-count') || '0';
-                setVisitorCount(parseInt(localCount, 10));
-                setIsLoading(false);
-                return;
-            }
-
             try {
                 // Get current count
                 const { data: currentData, error: fetchError } = await supabase

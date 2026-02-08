@@ -49,6 +49,7 @@ const ExperienceCard = ({ index, experience }) => {
                             src={experience.icon}
                             alt={`feedback_by-${experience.company_name}`}
                             className='w-full h-full object-contain'
+                            loading="lazy"
                         />
                     </div>
                 </div>
@@ -68,6 +69,7 @@ const ExperienceCard = ({ index, experience }) => {
                             src={experience.image}
                             alt='certificate'
                             className='w-full h-auto rounded-lg shadow-2xl'
+                            loading="lazy"
                         />
                         <p className="mt-4 text-[12px] font-bold text-secondary tracking-widest uppercase">Internship Certificate</p>
                     </motion.div>
@@ -76,6 +78,8 @@ const ExperienceCard = ({ index, experience }) => {
         </motion.div>
     );
 };
+
+const ExperienceCardMemo = React.memo(ExperienceCard);
 
 const Experience = () => {
     return (
@@ -99,7 +103,7 @@ const Experience = () => {
                 viewport={{ once: true, amount: 0.25 }}
             >
                 {experiences.map((experience, index) => (
-                    <ExperienceCard key={experience.company_name} index={index} experience={experience} />
+                    <ExperienceCardMemo key={experience.company_name} index={index} experience={experience} />
                 ))}
             </motion.div>
         </div>

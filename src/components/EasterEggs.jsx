@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import soundEffects from "../utils/soundEffects";
-import { useDevToolsOpen } from "../utils/useDevToolsOpen";
+// import { useDevToolsOpen } from "../utils/useDevToolsOpen"; // Disabled to fix 3D rendering issues
 import NyanCat from "./NyanCat";
 
 const EasterEggs = () => {
-  const { isDevToolsOpen } = useDevToolsOpen();
+  // const { isDevToolsOpen } = useDevToolsOpen(); // Disabled to fix 3D rendering issues
+  const isDevToolsOpen = false; // Hardcoded to false to prevent interference with WebGL/Three.js
 
   useEffect(() => {
     if (!isDevToolsOpen) return;

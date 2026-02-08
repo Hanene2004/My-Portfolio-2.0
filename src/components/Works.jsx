@@ -81,6 +81,7 @@ const ProjectCard = ({ index, name, image, source_code_link, onOpenModal }) => {
             src={image}
             alt={name}
             className="w-full h-full object-cover transition-all duration-500 ease-out group-hover:scale-[1.02]"
+            loading="lazy"
             style={{
               filter: "brightness(0.88) saturate(1.05) contrast(1.02)",
               ...parallaxStyle,
@@ -141,6 +142,8 @@ const ProjectCard = ({ index, name, image, source_code_link, onOpenModal }) => {
     </motion.div>
   );
 };
+
+const ProjectCardMemo = React.memo(ProjectCard);
 
 const Works = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -222,7 +225,7 @@ const Works = () => {
 
         <div className="mt-20 flex flex-wrap gap-10">
           {projects.map((project, index) => (
-            <ProjectCard
+            <ProjectCardMemo
               key={`project-${index}`}
               index={index}
               {...project}

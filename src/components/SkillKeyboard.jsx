@@ -298,11 +298,13 @@ const SkillKeyboard = () => {
         }}
       >
         <Suspense fallback={<div>Loading 3D Keyboard...</div>}>
-          <Spline
-            ref={splineContainer}
-            onLoad={(app) => setSplineApp(app)}
-            scene="/assets/skills-keyboard.spline"
-          />
+          {isInView && (
+            <Spline
+              ref={splineContainer}
+              onLoad={(app) => setSplineApp(app)}
+              scene="/assets/skills-keyboard.spline"
+            />
+          )}
         </Suspense>
 
         {/* Floating Skill Logo Overlay */}
@@ -330,6 +332,7 @@ const SkillKeyboard = () => {
               src={selectedSkill.icon}
               alt={selectedSkill.label}
               style={{ width: "30px", height: "30px", objectFit: "contain" }}
+              loading="lazy"
             />
             <span style={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>
               {selectedSkill.label}
