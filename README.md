@@ -1,231 +1,74 @@
-# 🚀 3D Portfolio Website
+# 🚀 3D Portfolio Website | Hanane Ghabbara
 
-Welcome to my immersive 3D portfolio website! This project showcases my skills, projects, and creativity through stunning 3D animations, interactive elements, and smooth motion design. Experience a cosmic journey through space-themed design with cutting-edge web technologies.
+Welcome to my immersive 3D portfolio! This project showcases my journey as an IT student and developer through stunning 3D animations, interactive elements, and AI-driven projects. Experience a cosmic journey through my work, built with cutting-edge web technologies.
 
-![Portfolio Preview](https://github.com/Jayant-1/3D-Portfolio/blob/main/public/assets/nav-link-previews/home.png?raw=true)
-
+![Portfolio Preview](https://github.com/Hanene2004/3D-Portfolio-main/raw/main/public/assets/nav-link-previews/home.png)
 
 ## ✨ Features
 
 ### 🎮 Interactive 3D Elements
+- **Custom 3D Keyboard**: Interactive Spline-powered keyboard where skills reveal descriptions on hover.
+- **3D Canvas**: Desktop models, Earth simulations, and star fields using **React Three Fiber**.
+- **Magnetic UI**: Interactive social docks and buttons with physics-based animations.
+- **Space Theme**: An immersive cosmic environment with dynamic particle systems.
 
-- **Custom 3D Keyboard**: Interactive Spline-powered keyboard with skills as keycaps that reveal titles and descriptions on hover
-- **3D Models**: Desktop PC, Earth, and other 3D assets using Three.js and React Three Fiber
-- **Particle Systems**: Dynamic star field background creating an immersive space environment
-- **Elastic Cursor**: Custom cursor with physics-based animations for enhanced interactivity
+### 🎨 Visual & Motion Design
+- **Smooth Animations**: Powered by **GSAP** and **Framer Motion** for fluid transitions and reveals.
+- **Glassmorphism**: A modern, premium UI design with transparent elements and blurred backgrounds.
+- **Live Status Badge**: Dynamic indicator showing current availability or focus.
 
-### 🎨 Visual & Animation
-
-- **Smooth Animations**: Powered by GSAP and Framer Motion for fluid scroll animations, hover effects, and element reveals
-- **Space Theme**: Dark cosmic background with particle effects and stellar animations
-- **Preloader**: Engaging loading screen with custom animations
-- **Easter Eggs**: Hidden interactive elements for curious visitors
-
-### 📱 Responsive Design
-
-- **Mobile-First**: Fully responsive across all devices and screen sizes
-- **Touch Optimized**: Smooth interactions on touch devices
-- **Performance Optimized**: Optimized 3D rendering and animations
-
-### 🎯 Sections
-
-- **Hero**: Eye-catching introduction with 3D elements
-- **About**: Personal story and background
-- **Skills**: Interactive 3D keyboard showcasing technical skills
-- **Projects**: Portfolio of work with 3D project cards
-- **Achievements**: Timeline of accomplishments and certifications
-- **Contact**: Interactive contact form with 3D elements
+### 📱 Responsive & Performant
+- **Fully Responsive**: Optimized for all screen sizes, from mobile to ultra-wide displays.
+- **Performance Focused**: Efficient 3D rendering and lazy loading for a smooth user experience.
 
 ## 🛠️ Tech Stack
 
-### Frontend & Framework
+### Frontend & 3D
+- **React 18** & **Vite**
+- **Three.js** & **React Three Fiber**
+- **Spline Runtime**
+- **GSAP** & **Framer Motion**
+- **Tailwind CSS**
 
-- **React 18** - Modern React with hooks and functional components
-- **Vite** - Lightning-fast build tool and development server
-- **React Router DOM** - Client-side routing
+### Backend & Utilities
+- **Supabase** (Database & Auth)
+- **FastAPI** / **Python** (for AI & Data engines)
+- **EmailJS** (Contact functionality)
+- **React Helmet Async** (SEO)
 
-### 3D & Graphics
+## 📁 Featured Projects
 
-- **Three.js** - 3D graphics library
-- **React Three Fiber** - React renderer for Three.js
-- **React Three Drei** - Useful helpers for React Three Fiber
-- **Spline Runtime** - Interactive 3D design tool integration
-- **Maath** - Mathematical utilities for 3D graphics
-
-### Styling & UI
-
-- **Tailwind CSS** - Utility-first CSS framework
-- **PostCSS** - CSS processing
-- **Autoprefixer** - CSS vendor prefixing
-
-### Animations & Interactions
-
-- **GSAP** - Professional-grade animations
-- **Framer Motion** - Production-ready motion library
-- **React Tilt** - 3D tilt effects
-- **React Vertical Timeline Component** - Timeline animations
-
-### Utilities & Tools
-
-- **React Icons** - Icon library
-- **EmailJS** - Email functionality
-- **Clsx & Tailwind Merge** - Conditional styling utilities
-- **Devtools Detector** - Development tools detection
+- **VitalTrack Pro**: AI-Powered Nutrition platform with Gemini AI and metabolic insights.
+- **Post Advisor AI**: Advanced social media content optimizer using AI analysis.
+- **MultiHub Analytics**: Full-stack data analysis platform with a scientific Python engine.
+- **TaskQuest AI**: Gamified productivity platform turning task management into an RPG.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
-- **Node.js** (v16 or higher)
-- **npm** or **yarn** package manager
+- **Node.js** (v18 or higher)
+- **npm** or **yarn**
 
 ### Installation
-
 1. **Clone the repository:**
-
    ```bash
-   git clone https://github.com/Jayant-1/3D-Portfolio.git
-   cd 3d-portfolio
+   git clone https://github.com/Hanene2004/3D-Portfolio-main.git
+   cd 3D-Portfolio-main
    ```
-
 2. **Install dependencies:**
-
    ```bash
    npm install
-   # or
-   yarn install
    ```
-
-3. **Start the development server:**
-
+3. **Start development:**
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-4. **Open your browser:**
-   Navigate to [http://localhost:5173](http://localhost:5173) to see the magic!
+## 🤝 Contact & Socials
 
-### Build for Production
-
-```bash
-npm run build
-# or
-yarn build
-```
-
-### Preview Production Build
-
-```bash
-npm run preview
-# or
-yarn preview
-```
-
-## 📁 Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── canvas/         # 3D canvas components
-│   │   ├── Ball.jsx
-│   │   ├── Computers.jsx
-│   │   ├── Earth.jsx
-│   │   └── Stars.jsx
-│   ├── preloader/      # Loading screen
-│   ├── ui/            # UI components
-│   ├── About.jsx
-│   ├── Achievement.jsx
-│   ├── Contact.jsx
-│   ├── ElasticCursor.jsx
-│   ├── Feedbacks.jsx
-│   ├── Hero.jsx
-│   ├── Navbar.jsx
-│   ├── SkillKeyboard.jsx
-│   └── Works.jsx
-├── assets/            # Static assets
-│   ├── achievement/   # Achievement images
-│   ├── badge/        # Skill badges
-│   ├── fonts/        # Custom fonts
-│   └── project/      # Project images
-├── constants/         # Configuration files
-├── hoc/              # Higher-order components
-├── utils/            # Utility functions
-└── styles.js         # Global styles
-```
-
-## 🎨 Customization
-
-### Adding New 3D Models
-
-1. Place your 3D models in the `public/` directory
-2. Import and use them in canvas components
-3. Ensure models are optimized for web (glTF format recommended)
-
-### Modifying Animations
-
-- **GSAP Animations**: Edit scroll-triggered animations in component files
-- **Framer Motion**: Modify motion variants in components
-- **3D Animations**: Update Three.js animations in canvas components
-
-### Styling Changes
-
-- **Tailwind Classes**: Modify existing classes or add custom ones
-- **Global Styles**: Update `src/styles.js` for theme changes
-- **Component Styles**: Edit individual component styling
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Vercel will automatically deploy your site
-
-### Other Platforms
-
-- **GitHub Pages**: Deploy using GitHub Actions
-- **Firebase Hosting**: Use Firebase CLI
-- **AWS S3**: Upload built files to S3 bucket
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Commit your changes**: `git commit -m 'Add amazing feature'`
-4. **Push to the branch**: `git push origin feature/amazing-feature`
-5. **Open a Pull Request**
-
-### Development Guidelines
-
-- Follow React best practices
-- Maintain responsive design
-- Optimize 3D performance
-- Add meaningful commit messages
-- Test across different devices
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Spline** for 3D design tools
-- **Three.js** community for 3D graphics
-- **GSAP** for powerful animations
-- **Framer Motion** for React animations
-- **Tailwind CSS** for utility-first styling
-
-## 📞 Contact
-
-- **Portfolio**: [https://jayant-1.vercel.app/]
-- **GitHub**: [@Jayant-1](https://github.com/Jayant-1)
-- **LinkedIn**: [Jayant Potdar](https://www.linkedin.com/in/jayant-potdar-880a461b8/)
-- **Email**: jayantpotdar2006@gmail.com
+- **LinkedIn**: [Hanane Ghabbara](https://www.linkedin.com/in/hanane-ghabbara-056047296/)
+- **GitHub**: [@Hanene2004](https://github.com/Hanene2004)
+- **Portfolio**: [hanane-portfolio.vercel.app](https://hanane-portfolio.vercel.app/)
 
 ---
-
-⭐ **Star this repository if you found it helpful!**
+⭐ **Star this repo if you like my work!**

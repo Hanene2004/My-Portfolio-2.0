@@ -57,24 +57,28 @@ const Contact = () => {
     setLoading(true);
 
     // Save to Supabase database first
-    try {
-      const { error: dbError } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            name: form.name,
-            email: form.email,
-            message: form.message,
-            contact_method: contactMethod
-          }
-        ]);
+    if (supabase) {
+      try {
+        const { error: dbError } = await supabase
+          .from('contact_submissions')
+          .insert([
+            {
+              name: form.name,
+              email: form.email,
+              message: form.message,
+              contact_method: contactMethod
+            }
+          ]);
 
-      if (dbError) {
-        console.error('Error saving to database:', dbError);
-        // Continue with EmailJS even if database save fails
+        if (dbError) {
+          console.error('Error saving to database:', dbError);
+          // Continue with EmailJS even if database save fails
+        }
+      } catch (error) {
+        console.error('Unexpected database error:', error);
       }
-    } catch (error) {
-      console.error('Unexpected database error:', error);
+    } else {
+      console.warn('Supabase is not configured. Submission not saved to database.');
     }
 
     // Check if EmailJS environment variables are configured
