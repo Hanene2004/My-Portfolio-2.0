@@ -2,7 +2,6 @@
 
 Welcome to my immersive 3D portfolio! This project showcases my journey as an IT student and developer through stunning 3D animations, interactive elements, and AI-driven projects. Experience a cosmic journey through my work, built with cutting-edge web technologies.
 
-![Portfolio Preview](https://github.com/Hanene2004/3D-Portfolio-main/raw/main/public/assets/nav-link-previews/home.png)
 
 ## ✨ Features
 
